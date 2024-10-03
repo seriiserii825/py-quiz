@@ -11,3 +11,5 @@ quiz = QuizBrain(question_bank)
 
 while quiz.stillHasQuestions():
     quiz.nextQuestion()
+
+quiz.finalScore()
