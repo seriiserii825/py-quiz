@@ -1,4 +1,5 @@
 import requests
+import html
 from Question import Question
 from QuizBrain import QuizBrain
 # from data import question_data
@@ -10,8 +11,8 @@ question_data = []
 for item in questions:
     try:
         question_data.append({
-            "text": item['question'],
-            "answer": item['correct_answer']
+            "text": html.unescape(item['question']),
+            "answer": html.unescape(item['correct_answer'])
             })
     except KeyError:
         print(f'KeyError: {item}')
